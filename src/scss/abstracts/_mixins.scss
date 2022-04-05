@@ -1,0 +1,38 @@
+@use "variables" as var;
+
+// ################# //
+//       Shape       //
+// ################# //
+@mixin roundCorner($radius) {
+	border-radius: $radius;
+}
+
+// ################# //
+//      Animate      //
+// ################# //
+@mixin transition {
+	transition: 0.25s ease-in-out;
+}
+
+@mixin transitionShort {
+	transition: 0.15s ease-in-out;
+}
+
+// ################# //
+//      Layout       //
+// ################# //
+@mixin flexFullCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin horizontalCenter {
+	display: flex;
+	justify-content: center;
+}
+
+@mixin verticalCenter {
+	display: flex;
+	align-items: center;
+}

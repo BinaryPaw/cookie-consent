@@ -1,0 +1,51 @@
+$prefix: "cc";
+$root-fsize: 16px;
+
+@function pixelToRem($px) {
+	@return calc($px / $root-fsize * 1rem);
+}
+
+$breakpoints: (
+	"xs": pixelToRem(320px),
+	"sm": pixelToRem(550px),
+	"md": pixelToRem(760px),
+	"lg": pixelToRem(1000px),
+	"xl": pixelToRem(1200px),
+	"xxl": pixelToRem(1400px),
+);
+
+$fsize: (
+	"lg": pixelToRem(14px),
+	"md": pixelToRem(12px),
+	"sm": pixelToRem(10px),
+);
+
+$gap: (
+	"xs": pixelToRem(5px),
+	"sm": pixelToRem(10px),
+	"md": pixelToRem(18px),
+	"lg": pixelToRem(25px),
+);
+
+$corner: (
+	"sm": pixelToRem(5px),
+	"md": pixelToRem(10px),
+);
+
+$colors: (
+	"text": #171717,
+	"secondary": #808080,
+	"bg": #f2f2f2,
+	"accept": #05a600,
+	"decline": #f13136,
+	"accent": #34a8db,
+);
+
+:root {
+	--#{$prefix}-color-text: #{map-get($colors, "text")};
+	--#{$prefix}-color-secondary: #{map-get($colors, "secondary")};
+	--#{$prefix}-color-bg: #{map-get($colors, "bg")};
+	--#{$prefix}-color-accept: #{map-get($colors, "accept")};
+	--#{$prefix}-color-decline: #{map-get($colors, "decline")};
+	--#{$prefix}-color-accent: #{map-get($colors, "accent")};
+}

@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as fct;
+
+.#{var.$prefix}__gimme-cookies {
+	font-size: map-get(var.$fsize, "md");
+	color: var(fct.getColorVar("text"));
+
+	h3 {
+		font-size: map-get(var.$fsize, "lg");
+		font-weight: 700;
+	}
+
+	h4 {
+		font-size: map-get(var.$fsize, "lg");
+		font-weight: 700;
+	}
+
+	h5 {
+		font-size: map-get(var.$fsize, "lg");
+		font-weight: 600;
+	}
+
+	p {
+		font-size: map-get(var.$fsize, "md");
+		font-weight: 400;
+
+		&.sm {
+			font-size: map-get(var.$fsize, "sm");
+		}
+	}
+}

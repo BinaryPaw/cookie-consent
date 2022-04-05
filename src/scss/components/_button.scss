@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as fct;
+@use "../abstracts/mixins" as mix;
+
+$button-colors: (
+	"accept": map-get(var.$colors, "accept"),
+	"decline": map-get(var.$colors, "decline"),
+	"secondary": map-get(var.$colors, "secondary"),
+	"accent": map-get(var.$colors, "accent"),
+);
+
+.#{var.$prefix}-btn {
+	--#{var.$prefix}-dynamic-color-text: #{map-get(var.$colors, "bg")}; // property will be dynamically modified in js based on contrast
+
+	cursor: pointer;
+	font-size: map-get(var.$fsize, "md");
+	font-weight: 700;
+	color: var(--#{var.$prefix}-dynamic-color-text);
+	@include mix.flexFullCenter();
+
+	svg {
+		width: fct.pixelToRem(12px);
+		height: fct.pixelToRem(12px);
+		margin-right: map-get(var.$gap, "xs");
+		fill: currentColor;
+	}
+}
+
+.#{var.$prefix}-btn-- {
+	&primary {
+		@include mix.roundCorner(map-get(var.$corner, "sm"));
+		padding: map-get(var.$gap, "xs") map-get(var.$gap, "sm");
+	}
+
+	&tertiary {
+		background-color: unset;
+		color: map-get(var.$colors, "text");
+		text-decoration: underline;
+	}
+}
+
+@each $name, $color in $button-colors {
+	.#{var.$prefix}-btn--#{$name} {
+		background-color: $color;
+		@include mix.transitionShort();
+
+		&:hover {
+			filter: brightness(92%);
+		}
+
+		&:active {
+			filter: brightness(78%);
+		}
+	}
+}

@@ -1,0 +1,10 @@
+@use "variables" as var;
+$root-fsize: 16px;
+
+@function pixelToRem($px) {
+	@return calc($px / $root-fsize * 1rem);
+}
+
+@function getColorVar($color) {
+	@return --#{var.$prefix}-color-#{$color};
+}
