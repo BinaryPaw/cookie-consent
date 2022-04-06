@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import LanguageHelper, { PackageLanguage } from "../../helpers/Language";
+import ActionButtonsModify from "../Button/ActionButtonsModify";
+import ActionButtonsSmall from "../Button/ActionButtonsSmall";
+import ButtonGroup from "../Button/ButtonGroup";
 import IconTimes from "../Icons/IconTimes";
 import Paragraph from "../Text/Paragraph";
 import Title from "../Text/Title";
@@ -72,6 +75,11 @@ function CookieConsent({
 					tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
 					vero eos et accusam et justo duo dolores et ea rebum.
 				</Paragraph>
+				<ButtonGroup
+					privacyLink={privacyPolicyLink}
+					cookieLink={cookiePolicyLink}
+					actionButtons={<ActionButtonsSmall />}
+				/>
 			</ContainerSmall>
 			<ContainerModify>
 				<IconTimes />
@@ -86,6 +94,11 @@ function CookieConsent({
 					sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
 					magna aliquyam erat, sed diam voluptua.
 				</Paragraph>
+				<ButtonGroup
+					privacyLink={privacyPolicyLink}
+					cookieLink={cookiePolicyLink}
+					actionButtons={<ActionButtonsModify />}
+				/>
 			</ContainerModify>
 		</div>
 	);

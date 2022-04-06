@@ -10,13 +10,13 @@ $button-colors: (
 );
 
 .#{var.$prefix}__btn {
-	--#{var.$prefix}-dynamic-color-text: #{map-get(var.$colors, "bg")}; // property will be dynamically modified in js based on contrast
+	--#{var.$prefix}-dynamic-color-text: #{map-get(var.$colors, "bg")};
 
+	@include mix.flexFullCenter();
 	cursor: pointer;
 	font-size: map-get(var.$fsize, "md");
 	font-weight: 700;
 	color: var(--#{var.$prefix}-dynamic-color-text);
-	@include mix.flexFullCenter();
 
 	svg {
 		width: fct.pixelToRem(12px);
@@ -50,6 +50,35 @@ $button-colors: (
 
 		&:active {
 			filter: brightness(78%);
+		}
+	}
+}
+
+.#{var.$prefix}__btn__group {
+	@include mix.flexFullCenter();
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin-top: map-get(var.$gap, "md");
+
+	.secondary,
+	.action {
+		@include mix.flexFullCenter();
+		gap: map-get(var.$gap, "sm");
+	}
+
+	.action {
+		margin-top: map-get(var.$gap, "md");
+	}
+}
+
+@media only screen and (min-width: map-get(var.$breakpoints, "md")) {
+	.#{var.$prefix}__btn__group {
+		justify-content: space-between;
+		flex-direction: row;
+		margin-top: map-get(var.$gap, "md");
+
+		.action {
+			margin-top: unset;
 		}
 	}
 }

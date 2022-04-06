@@ -13,7 +13,7 @@ export interface IButtonProps {
 	children?: string;
 }
 
-function Button({ type = "primary", color, icon, onClick, children }: IButtonProps) {
+function Button({ type, color, icon, onClick, children }: IButtonProps) {
 	const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
 		if (onClick) onClick(e);
 	};
@@ -27,5 +27,9 @@ function Button({ type = "primary", color, icon, onClick, children }: IButtonPro
 		</button>
 	);
 }
+
+Button.defaultProps = {
+	type: "primary",
+} as Partial<IButtonProps>;
 
 export default Button;
