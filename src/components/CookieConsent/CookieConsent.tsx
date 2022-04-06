@@ -1,27 +1,47 @@
 import React from "react";
-import Button from "../Button/Button";
-import IconCheck from "../Icons/IconCheck";
-import IconCog from "../Icons/IconCog";
-import IconTimes from "../Icons/IconTimes";
 
-const CookieConsent = () => {
-	return (
-		<div className="cc__gimme-cookies">
-			<Button type="primary" color="accept" icon={<IconCheck />}>
-				Accept
-			</Button>
-			<Button type="primary" color="decline" icon={<IconTimes />}>
-				Decline
-			</Button>
-			<Button type="primary" color="secondary" icon={<IconCog />}>
-				Modify
-			</Button>
-			<Button type="primary" color="accent">
-				Save & Close
-			</Button>
-			<Button type="tertiary">Cookie policy</Button>
-		</div>
-	);
+export type PackageLanguage = "de" | "en";
+
+export interface IThemeColors {
+	text?: string;
+	secondary?: string;
+	bg?: string;
+	accept?: string;
+	decline?: string;
+	accent?: string;
+}
+
+export interface ICookie {
+	name: string;
+	group?: string;
+	consent: boolean;
+	mandatory: boolean;
+	desc: string;
+}
+
+export interface IThirdPartyProvider {
+	name: string;
+	desc: string;
+	privacyLink: string;
+	optOutLink: string;
+}
+
+export interface ICookieConsentProps {
+	name: string;
+	activated?: boolean;
+	language?: PackageLanguage;
+
+	preamble: string;
+	privacyPolicyLink: string;
+	cookiePolicyLink?: string;
+	cookies: Array<ICookie>;
+	thirdPartyProvider?: Array<IThirdPartyProvider>;
+
+	colors?: IThemeColors;
+}
+
+const CookieConsent = ({}: ICookieConsentProps) => {
+	return <div className="cc__gimme-cookies"></div>;
 };
 
 export default CookieConsent;

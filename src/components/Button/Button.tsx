@@ -1,11 +1,11 @@
 import React from "react";
-import "../../scss/styles.scss";
 import Utility from "../../helpers/Utility";
+import "../../scss/styles.scss";
 
 export type ButtonColor = "accept" | "decline" | "secondary" | "accent";
 export type ButtonType = "primary" | "tertiary";
 
-interface IButtonProps {
+export interface IButtonProps {
 	type: ButtonType;
 	color?: ButtonColor;
 	icon?: React.ReactNode;
