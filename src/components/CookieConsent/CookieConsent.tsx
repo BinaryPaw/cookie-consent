@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LanguageHelper, { PackageLanguage } from "../../helpers/Language";
 
 export type URLString = `https://${string}.${string}`;
@@ -53,7 +53,10 @@ function CookieConsent({
 	thirdPartyProvider,
 	colors,
 }: ICookieConsentProps) {
-	LanguageHelper.setLanguageFile(language || "en"); //TODO actually not necessary to check for undefined
+	useEffect(() => {
+		//TODO probably not necessary to check for undefined
+		LanguageHelper.setLanguageFile(language || "en");
+	}, [language]);
 
 	return <div className="cc__gimme-cookies"></div>;
 }
