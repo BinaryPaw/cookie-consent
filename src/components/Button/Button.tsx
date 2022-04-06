@@ -1,4 +1,6 @@
+import React from "react";
 import "../../scss/styles.scss";
+import Utility from "../../helpers/Utility";
 
 export type ButtonColor = "accept" | "decline" | "secondary" | "accent";
 export type ButtonType = "primary" | "tertiary";
@@ -16,8 +18,10 @@ const Button = ({ type, color, icon, onClick, children }: IButtonProps) => {
 		if (onClick) onClick(e);
 	};
 
+	const colorClass = Utility.generatePrefixedClass("btn--", color);
+
 	return (
-		<button className={`cc-btn cc-btn--${type} cc-btn--${color}`} onClick={handleClick}>
+		<button className={`cc-btn cc-btn--${type} ${colorClass}`} onClick={handleClick}>
 			{icon}
 			{children}
 		</button>
