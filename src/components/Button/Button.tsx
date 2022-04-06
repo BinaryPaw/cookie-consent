@@ -21,7 +21,7 @@ function Button({ type = "primary", color, icon, onClick, children }: IButtonPro
 	const colorClass = Utility.generatePrefixedClass("btn--", color);
 
 	return (
-		<button className={`cc-btn cc-btn--${type} ${colorClass}`} onClick={handleClick}>
+		<button className={`cc__btn cc__btn--${type} ${colorClass}`} onClick={handleClick}>
 			{icon}
 			{children}
 		</button>

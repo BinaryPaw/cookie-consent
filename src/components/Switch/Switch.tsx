@@ -17,7 +17,7 @@ function Switch({ checked, disabled = false, onClick }: ISwitchProps) {
 		: "";
 
 	return (
-		<div className="cc-switch" title={necessaryCookieToolTip} onClick={handleClick}>
+		<div className="cc__switch" title={necessaryCookieToolTip} onClick={handleClick}>
 			<input type="checkbox" checked={checked} disabled={disabled} onChange={() => {}} />
 			<span></span>
 		</div>

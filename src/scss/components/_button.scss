@@ -9,7 +9,7 @@ $button-colors: (
 	"accent": map-get(var.$colors, "accent"),
 );
 
-.#{var.$prefix}-btn {
+.#{var.$prefix}__btn {
 	--#{var.$prefix}-dynamic-color-text: #{map-get(var.$colors, "bg")}; // property will be dynamically modified in js based on contrast
 
 	cursor: pointer;
@@ -26,7 +26,7 @@ $button-colors: (
 	}
 }
 
-.#{var.$prefix}-btn-- {
+.#{var.$prefix}__btn-- {
 	&primary {
 		@include mix.roundCorner(map-get(var.$corner, "sm"));
 		padding: map-get(var.$gap, "xs") map-get(var.$gap, "sm");
@@ -40,7 +40,7 @@ $button-colors: (
 }
 
 @each $name, $color in $button-colors {
-	.#{var.$prefix}-btn--#{$name} {
+	.#{var.$prefix}__btn--#{$name} {
 		background-color: $color;
 		@include mix.transitionShort();
 

@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import LanguageHelper, { PackageLanguage } from "../../helpers/Language";
+import ContainerModify from "./ContainerModify";
+import ContainerSmall from "./ContainerSmall";
 
 export type URLString = `https://${string}.${string}`;
 export type ColorString = `#${string}`;
@@ -57,7 +59,12 @@ function CookieConsent({
 		LanguageHelper.setLanguageFile(language);
 	}, [language]);
 
-	return <div className="cc__gimme-cookies"></div>;
+	return (
+		<div className="cc__gimme-cookies">
+			<ContainerSmall></ContainerSmall>
+			<ContainerModify></ContainerModify>
+		</div>
+	);
 }
 
 export default CookieConsent;

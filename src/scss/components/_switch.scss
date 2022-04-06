@@ -6,7 +6,7 @@ $switchWidth: fct.pixelToRem(35px);
 $switchHeight: fct.pixelToRem(20px);
 $knobSize: fct.pixelToRem(16px);
 
-.#{var.$prefix}-switch {
+.#{var.$prefix}__switch {
 	position: relative;
 	width: $switchWidth;
 	height: $switchHeight;
