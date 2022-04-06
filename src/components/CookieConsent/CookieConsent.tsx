@@ -53,7 +53,7 @@ function CookieConsent({
 	thirdPartyProvider,
 	colors,
 }: ICookieConsentProps) {
-	LanguageHelper.setLanguageFile(language || "en"); //TODO actually not needed to check for undefined
+	LanguageHelper.setLanguageFile(language || "en"); //TODO actually not necessary to check for undefined
 
 	return <div className="cc__gimme-cookies"></div>;
 }

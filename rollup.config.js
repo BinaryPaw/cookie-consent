@@ -1,9 +1,10 @@
-import babel from "rollup-plugin-babel";
-import resolve from "@rollup/plugin-node-resolve";
-import external from "rollup-plugin-peer-deps-external";
 import typescript from "@rollup/plugin-typescript";
-import scss from "rollup-plugin-scss";
+import resolve from "@rollup/plugin-node-resolve";
+import json from "@rollup/plugin-json";
+import external from "rollup-plugin-peer-deps-external";
 import { terser } from "rollup-plugin-terser";
+import babel from "rollup-plugin-babel";
+import scss from "rollup-plugin-scss";
 
 const name = require("./package.json").main.replace(/\.js$/, "");
 
@@ -33,8 +34,11 @@ export default [
 				output: `dist/${name}.css`,
 				sourceMap: true,
 			}),
+			json({
+				include: ["src/constants/**/*.json"],
+			}),
 			typescript({
-				tsconfig: "./tsconfig.json",
+				tsconfig: "tsconfig.json",
 			}),
 			external(),
 			resolve(),

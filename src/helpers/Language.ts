@@ -2,13 +2,11 @@ export type PackageLanguage = "de" | "en";
 export type TranslatorKey = `${string}-${string}-${string}`;
 
 export default class LanguageHelper {
-	static langFile: object;
+	static langFile: { [key: string]: { [key: string]: { [key: string]: string } } };
 
 	static async setLanguageFile(lang: PackageLanguage) {
 		const langFile = await import(`../constants/lang_${lang}.json`);
-
-		if (!langFile) return;
-		this.langFile = langFile;
+		if (langFile) this.langFile = langFile;
 	}
 
 	static translate(key: TranslatorKey) {
