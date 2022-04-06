@@ -1,4 +1,5 @@
 import React from "react";
+import LanguageHelper from "../../helpers/Language";
 
 export interface ISwitchProps {
 	checked: boolean;
@@ -11,7 +12,9 @@ function Switch({ checked, disabled, onClick }: ISwitchProps) {
 		if (onClick && !disabled) onClick();
 	};
 
-	const necessaryCookieToolTip = disabled ? "Necessary Cookie" : "";
+	const necessaryCookieToolTip = disabled
+		? LanguageHelper.translate("components-switch-DISABLED_TOOLTIP")
+		: "";
 
 	return (
 		<div className="cc-switch" title={necessaryCookieToolTip} onClick={handleClick}>
@@ -23,6 +26,6 @@ function Switch({ checked, disabled, onClick }: ISwitchProps) {
 
 Switch.defaultProps = {
 	disabled: false,
-};
+} as Partial<ISwitchProps>;
 
 export default Switch;

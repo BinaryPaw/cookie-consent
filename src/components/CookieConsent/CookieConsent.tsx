@@ -1,6 +1,6 @@
 import React from "react";
+import LanguageHelper, { PackageLanguage } from "../../helpers/Language";
 
-export type PackageLanguage = "de" | "en";
 export type URLString = `https://${string}.${string}`;
 export type ColorString = `#${string}`;
 
@@ -36,20 +36,33 @@ export interface ICookieConsentProps {
 	preamble: string;
 	privacyPolicyLink: URLString;
 	cookiePolicyLink?: URLString;
-	cookies: Array<ICookie>;
+	cookies?: Array<ICookie>;
 	thirdPartyProvider?: Array<IThirdPartyProvider>;
 
 	colors?: IThemeColors;
 }
 
-function CookieConsent({}: ICookieConsentProps) {
+function CookieConsent({
+	name,
+	activated,
+	language,
+	preamble,
+	privacyPolicyLink,
+	cookiePolicyLink,
+	cookies,
+	thirdPartyProvider,
+	colors,
+}: ICookieConsentProps) {
+	LanguageHelper.setLanguageFile(language || "en"); //TODO actually not needed to check for undefined
+
 	return <div className="cc__gimme-cookies"></div>;
 }
 
 CookieConsent.defaultProps = {
 	activated: true,
 	language: "en",
+	cookies: [],
 	thirdPartyProvider: [],
-};
+} as Partial<ICookieConsentProps>;
 
 export default CookieConsent;

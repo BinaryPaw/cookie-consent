@@ -30,6 +30,6 @@ function Button({ type, color, icon, onClick, children }: IButtonProps) {
 
 Button.defaultProps = {
 	type: "primary",
-};
+} as Partial<IButtonProps>;
 
 export default Button;
