@@ -7,7 +7,7 @@ export interface ISwitchProps {
 	onClick?: Function;
 }
 
-function Switch({ checked, disabled, onClick }: ISwitchProps) {
+function Switch({ checked, disabled = false, onClick }: ISwitchProps) {
 	const handleClick = () => {
 		if (onClick && !disabled) onClick();
 	};
@@ -23,9 +23,5 @@ function Switch({ checked, disabled, onClick }: ISwitchProps) {
 		</div>
 	);
 }
-
-Switch.defaultProps = {
-	disabled: false,
-} as Partial<ISwitchProps>;
 
 export default Switch;

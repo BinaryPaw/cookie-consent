@@ -44,28 +44,20 @@ export interface ICookieConsentProps {
 
 function CookieConsent({
 	name,
-	activated,
-	language,
+	activated = true,
+	language = "en",
 	preamble,
 	privacyPolicyLink,
 	cookiePolicyLink,
-	cookies,
-	thirdPartyProvider,
+	cookies = [],
+	thirdPartyProvider = [],
 	colors,
 }: ICookieConsentProps) {
 	useEffect(() => {
-		//TODO probably not necessary to check for undefined
-		LanguageHelper.setLanguageFile(language || "en");
+		LanguageHelper.setLanguageFile(language);
 	}, [language]);
 
 	return <div className="cc__gimme-cookies"></div>;
 }
-
-CookieConsent.defaultProps = {
-	activated: true,
-	language: "en",
-	cookies: [],
-	thirdPartyProvider: [],
-} as Partial<ICookieConsentProps>;
 
 export default CookieConsent;
