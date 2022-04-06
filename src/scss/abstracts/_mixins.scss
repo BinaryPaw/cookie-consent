@@ -43,3 +43,10 @@
 	bottom: 0;
 	left: 0;
 }
+
+@mixin resetSpanInAbsolute {
+	top: unset;
+	right: unset;
+	bottom: unset;
+	left: unset;
+}

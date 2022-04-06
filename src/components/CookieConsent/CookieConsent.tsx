@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import LanguageHelper, { PackageLanguage } from "../../helpers/Language";
+import IconTimes from "../Icons/IconTimes";
+import Paragraph from "../Text/Paragraph";
+import Title from "../Text/Title";
 import ContainerModify from "./ContainerModify";
 import ContainerSmall from "./ContainerSmall";
 
@@ -61,8 +64,29 @@ function CookieConsent({
 
 	return (
 		<div className="cc__gimme-cookies">
-			<ContainerSmall></ContainerSmall>
-			<ContainerModify></ContainerModify>
+			<ContainerSmall>
+				<IconTimes />
+				<Title>AntiPhishing cookie consent</Title>
+				<Paragraph>
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+					tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+					vero eos et accusam et justo duo dolores et ea rebum.
+				</Paragraph>
+			</ContainerSmall>
+			<ContainerModify>
+				<IconTimes />
+				<Title>AntiPhishing cookie consent</Title>
+				<Paragraph>
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+					tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+					vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit
+					amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+					labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+					et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur
+					sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+					magna aliquyam erat, sed diam voluptua.
+				</Paragraph>
+			</ContainerModify>
 		</div>
 	);
 }

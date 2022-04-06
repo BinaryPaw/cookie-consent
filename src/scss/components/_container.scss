@@ -1,0 +1,57 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/functions" as fct;
+
+$maxWidth: fct.pixelToRem(800px) - (2 * map-get(var.$gap, "md"));
+
+.#{var.$prefix}__container {
+	background-color: var(fct.getColorVar("bg"));
+	position: fixed;
+
+	> div {
+		position: relative;
+		max-width: $maxWidth;
+		padding: map-get(var.$gap, "md");
+
+		> svg {
+			position: absolute;
+			top: calc(map-get(var.$gap, "md"));
+			right: calc(map-get(var.$gap, "md"));
+			width: fct.pixelToRem(14px);
+			height: fct.pixelToRem(14px);
+			cursor: pointer;
+			fill: currentColor;
+		}
+	}
+
+	&--modify {
+		position: fixed;
+		z-index: 9999;
+		@include mix.spanInAbsolute();
+	}
+
+	&--small {
+		@include mix.flexFullCenter();
+		position: fixed;
+		z-index: 9999;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+@media only screen and (min-width: map-get(var.$breakpoints, "md")) {
+	.#{var.$prefix}__container {
+		> div {
+			width: $maxWidth;
+		}
+
+		&--modify {
+			@include mix.resetSpanInAbsolute();
+			transform: translate(-50%, -50%);
+			left: 50%;
+			top: 50%;
+			@include mix.roundCorner(map-get(var.$gap, "sm"));
+		}
+	}
+}
