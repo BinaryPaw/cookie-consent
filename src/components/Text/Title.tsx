@@ -1,7 +1,7 @@
 import React from "react";
 
 export interface ITitle {
-	children: string;
+	children: React.ReactNode;
 }
 
 function Title({ children }: ITitle) {

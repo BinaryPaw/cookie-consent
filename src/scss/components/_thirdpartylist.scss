@@ -24,10 +24,11 @@
 		}
 
 		.links {
+			margin-top: map-get(var.$gap, "sm");
 			@include mix.verticalCenter();
 			flex-direction: row;
-			gap: map-get(var.$gap, "md");
-			margin-top: map-get(var.$gap, "sm");
+			flex-wrap: wrap;
+			column-gap: map-get(var.$gap, "md");
 		}
 	}
 }

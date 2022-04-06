@@ -10,7 +10,7 @@ export interface IButtonProps {
 	color?: ButtonColor;
 	icon?: React.ReactNode;
 	onClick?: Function;
-	children?: string;
+	children?: React.ReactNode;
 }
 
 function Button({ type, color, icon, onClick, children }: IButtonProps) {

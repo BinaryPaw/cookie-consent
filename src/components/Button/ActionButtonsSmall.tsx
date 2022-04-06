@@ -3,6 +3,7 @@ import Button from "./Button";
 import IconCheck from "../Icons/IconCheck";
 import IconTimes from "../Icons/IconTimes";
 import IconCog from "../Icons/IconCog";
+import LanguageHelper from "../../helpers/Language";
 
 export interface IActionButtons {}
 
@@ -10,13 +11,13 @@ function ActionButtonsSmall({}: IActionButtons) {
 	return (
 		<>
 			<Button color="accept" icon={<IconCheck />}>
-				Accept
+				{LanguageHelper.translate("cc-small-BUTTON_ACCEPT")}
 			</Button>
 			<Button color="decline" icon={<IconTimes />}>
-				Decline
+				{LanguageHelper.translate("cc-small-BUTTON_DECLINE")}
 			</Button>
 			<Button color="secondary" icon={<IconCog />}>
-				Modify
+				{LanguageHelper.translate("cc-small-BUTTON_MODIFY")}
 			</Button>
 		</>
 	);

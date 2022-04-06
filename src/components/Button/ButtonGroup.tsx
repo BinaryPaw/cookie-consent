@@ -1,4 +1,5 @@
 import React from "react";
+import LanguageHelper from "../../helpers/Language";
 import { URLString } from "../CookieConsent/CookieConsent";
 import Button from "./Button";
 
@@ -13,11 +14,15 @@ function ButtonGroup({ cookieLink, privacyLink, actionButtons }: IButtonGroup) {
 		<div className="cc__btn__group">
 			<div className="secondary">
 				<a href={privacyLink}>
-					<Button type="tertiary">Privacy policy</Button>
+					<Button type="tertiary">
+						{LanguageHelper.translate("cc-small-PRIVACY_POLICY")}
+					</Button>
 				</a>
 				{cookieLink && (
 					<a href={cookieLink}>
-						<Button type="tertiary">Cookie policy</Button>
+						<Button type="tertiary">
+							{LanguageHelper.translate("cc-small-COOKIE_POLICY")}
+						</Button>
 					</a>
 				)}
 			</div>

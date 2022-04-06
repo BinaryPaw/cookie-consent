@@ -1,13 +1,7 @@
 import React, { useEffect } from "react";
 import LanguageHelper, { PackageLanguage } from "../../helpers/Language";
-import ActionButtonsModify from "../Button/ActionButtonsModify";
-import ActionButtonsSmall from "../Button/ActionButtonsSmall";
-import ButtonGroup from "../Button/ButtonGroup";
-import IconTimes from "../Icons/IconTimes";
-import Paragraph from "../Text/Paragraph";
-import Title from "../Text/Title";
-import ThirdPartyList, { IThirdPartyProvider } from "../ThirdParty/ThirdPartyList";
-import CookiesList, { ICookie } from "../CookiesList/CookiesList";
+import { IThirdPartyProvider } from "../ThirdParty/ThirdPartyList";
+import { ICookie } from "../CookiesList/CookiesList";
 import ContainerModify from "./ContainerModify";
 import ContainerSmall from "./ContainerSmall";
 
@@ -54,45 +48,20 @@ function CookieConsent({
 
 	return (
 		<div className="cc__gimme-cookies">
-			<ContainerSmall>
-				<IconTimes />
-				<Title>AntiPhishing cookie consent</Title>
-				<Paragraph>
-					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-					tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-					vero eos et accusam et justo duo dolores et ea rebum.
-				</Paragraph>
-				<ButtonGroup
-					privacyLink={privacyPolicyLink}
-					cookieLink={cookiePolicyLink}
-					actionButtons={<ActionButtonsSmall />}
-				/>
-			</ContainerSmall>
-			<ContainerModify>
-				<IconTimes />
-				<Title>AntiPhishing cookie consent</Title>
-				<Paragraph>
-					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-					tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-					vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit
-					amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-					labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-					et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur
-					sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-					magna aliquyam erat, sed diam voluptua.
-				</Paragraph>
-				<div className="cc__scroller cc__scroller--max">
-					{cookies.length > 0 && <CookiesList cookies={cookies} />}
-					{thirdPartyProvider.length > 0 && (
-						<ThirdPartyList thirdParties={thirdPartyProvider} />
-					)}
-				</div>
-				<ButtonGroup
-					privacyLink={privacyPolicyLink}
-					cookieLink={cookiePolicyLink}
-					actionButtons={<ActionButtonsModify />}
-				/>
-			</ContainerModify>
+			<ContainerSmall
+				name={name}
+				preamble={preamble}
+				privacyPolicyLink={privacyPolicyLink}
+				cookiePolicyLink={cookiePolicyLink}
+			/>
+			<ContainerModify
+				name={name}
+				preamble={preamble}
+				cookies={cookies}
+				thirdPartyProvider={thirdPartyProvider}
+				privacyPolicyLink={privacyPolicyLink}
+				cookiePolicyLink={cookiePolicyLink}
+			/>
 		</div>
 	);
 }

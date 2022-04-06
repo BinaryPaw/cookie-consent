@@ -115,5 +115,15 @@ stories.add("CookieConsent", () => {
 		},
 	];
 
-	return <CookieConsent cookies={cookies} thirdPartyProvider={thirdParty} />;
+	return (
+		<CookieConsent
+			name="BinaryPaw"
+			preamble="treasdadasdasdas"
+			language="de"
+			privacyPolicyLink="https://binarypaw.com/"
+			cookiePolicyLink="https://binarypaw.com/"
+			cookies={cookies}
+			thirdPartyProvider={thirdParty}
+		/>
+	);
 });
