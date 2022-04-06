@@ -1,5 +1,6 @@
 $prefix: "cc";
 $root-fsize: 16px;
+$infinite: 9999rem;
 
 @function pixelToRem($px) {
 	@return calc($px / $root-fsize * 1rem);

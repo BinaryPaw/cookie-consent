@@ -1,14 +1,16 @@
 import React from "react";
 
 export type PackageLanguage = "de" | "en";
+export type URLString = `https://${string}.${string}`;
+export type ColorString = `#${string}`;
 
 export interface IThemeColors {
-	text?: string;
-	secondary?: string;
-	bg?: string;
-	accept?: string;
-	decline?: string;
-	accent?: string;
+	text?: ColorString;
+	secondary?: ColorString;
+	bg?: ColorString;
+	accept?: ColorString;
+	decline?: ColorString;
+	accent?: ColorString;
 }
 
 export interface ICookie {
@@ -22,8 +24,8 @@ export interface ICookie {
 export interface IThirdPartyProvider {
 	name: string;
 	desc: string;
-	privacyLink: string;
-	optOutLink: string;
+	privacyLink: URLString;
+	optOutLink: URLString;
 }
 
 export interface ICookieConsentProps {
@@ -32,16 +34,22 @@ export interface ICookieConsentProps {
 	language?: PackageLanguage;
 
 	preamble: string;
-	privacyPolicyLink: string;
-	cookiePolicyLink?: string;
+	privacyPolicyLink: URLString;
+	cookiePolicyLink?: URLString;
 	cookies: Array<ICookie>;
 	thirdPartyProvider?: Array<IThirdPartyProvider>;
 
 	colors?: IThemeColors;
 }
 
-const CookieConsent = ({}: ICookieConsentProps) => {
+function CookieConsent({}: ICookieConsentProps) {
 	return <div className="cc__gimme-cookies"></div>;
+}
+
+CookieConsent.defaultProps = {
+	activated: true,
+	language: "en",
+	thirdPartyProvider: [],
 };
 
 export default CookieConsent;

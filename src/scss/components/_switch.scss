@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as fct;
+@use "../abstracts/mixins" as mix;
+
+$switchWidth: fct.pixelToRem(35px);
+$switchHeight: fct.pixelToRem(20px);
+$knobSize: fct.pixelToRem(16px);
+
+.#{var.$prefix}-switch {
+	position: relative;
+	width: $switchWidth;
+	height: $switchHeight;
+	cursor: pointer;
+
+	input {
+		width: 0;
+		height: 0;
+
+		&:checked + span {
+			background-color: var(fct.getColorVar("accept"));
+
+			&:before {
+				transform: translateX(calc($switchWidth - $switchHeight));
+			}
+		}
+
+		&[disabled] {
+			+ span {
+				background-color: var(fct.getColorVar("secondary"));
+				&:before {
+					background-color: var(fct.getColorVar("text"));
+				}
+			}
+		}
+	}
+
+	span {
+		position: absolute;
+		@include mix.spanInAbsolute();
+		@include mix.transitionShort();
+		background-color: var(fct.getColorVar("decline"));
+		border-radius: var.$infinite;
+
+		&:before {
+			content: "";
+			position: absolute;
+			height: $knobSize;
+			width: $knobSize;
+			left: calc(($switchHeight - $knobSize) / 2);
+			bottom: calc(($switchHeight - $knobSize) / 2);
+			background-color: var(fct.getColorVar("bg"));
+			border-radius: var.$infinite;
+			transition: inherit;
+		}
+	}
+}
