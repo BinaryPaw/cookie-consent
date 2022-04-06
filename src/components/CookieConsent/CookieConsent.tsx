@@ -6,6 +6,8 @@ import ButtonGroup from "../Button/ButtonGroup";
 import IconTimes from "../Icons/IconTimes";
 import Paragraph from "../Text/Paragraph";
 import Title from "../Text/Title";
+import ThirdPartyList, { IThirdPartyProvider } from "../ThirdParty/ThirdPartyList";
+import CookiesList, { ICookie } from "../CookiesList/CookiesList";
 import ContainerModify from "./ContainerModify";
 import ContainerSmall from "./ContainerSmall";
 
@@ -19,21 +21,6 @@ export interface IThemeColors {
 	accept?: ColorString;
 	decline?: ColorString;
 	accent?: ColorString;
-}
-
-export interface ICookie {
-	name: string;
-	group?: string;
-	consent: boolean;
-	mandatory: boolean;
-	desc: string;
-}
-
-export interface IThirdPartyProvider {
-	name: string;
-	desc: string;
-	privacyLink: URLString;
-	optOutLink: URLString;
 }
 
 export interface ICookieConsentProps {
@@ -94,6 +81,12 @@ function CookieConsent({
 					sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
 					magna aliquyam erat, sed diam voluptua.
 				</Paragraph>
+				<div className="cc__scroller cc__scroller--max">
+					{cookies.length > 0 && <CookiesList cookies={cookies} />}
+					{thirdPartyProvider.length > 0 && (
+						<ThirdPartyList thirdParties={thirdPartyProvider} />
+					)}
+				</div>
 				<ButtonGroup
 					privacyLink={privacyPolicyLink}
 					cookieLink={cookiePolicyLink}

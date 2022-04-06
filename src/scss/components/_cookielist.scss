@@ -1,0 +1,68 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/functions" as fct;
+
+.#{var.$prefix}__cookieheader {
+	max-height: 10%;
+	overflow-x: auto;
+	@include mix.verticalCenter();
+
+	.group {
+		cursor: pointer;
+		padding: 2px map-get(var.$gap, "sm");
+		box-sizing: border-box;
+		border-bottom: 2px solid map-get(var.$colors, "text");
+
+		&.active {
+			border: 2px solid map-get(var.$colors, "text");
+			border-radius: map-get(var.$corner, "sm") map-get(var.$corner, "sm") 0 0;
+			border-bottom: 2px solid map-get(var.$colors, "bg");
+		}
+	}
+}
+
+.#{var.$prefix}__cookielist {
+	overflow-y: scroll;
+	max-height: 90%;
+
+	&__item {
+		margin-top: map-get(var.$gap, "xs");
+		margin-bottom: map-get(var.$gap, "lg");
+
+		h4 {
+			margin-bottom: map-get(var.$gap, "xs");
+		}
+
+		.content {
+			justify-content: space-between;
+			@include mix.verticalCenter();
+			margin-right: map-get(var.$gap, "xs");
+
+			p {
+				max-width: 80%;
+			}
+		}
+	}
+}
+
+@media only screen and(min-width: map-get(var.$breakpoints, "md")) {
+	.#{var.$prefix}__list {
+		max-width: calc(50% - 50px);
+	}
+}
+
+@media only screen and(min-width: map-get(var.$breakpoints, "sm")) {
+	.#{var.$prefix}__cookielist__item .content {
+		p {
+			max-width: 85%;
+		}
+	}
+}
+
+@media only screen and(min-width: map-get(var.$breakpoints, "lg")) {
+	.#{var.$prefix}__cookielist__item .content {
+		p {
+			max-width: 80%;
+		}
+	}
+}

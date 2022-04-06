@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/functions" as fct;
+
+.#{var.$prefix}__thirdpartyheader {
+	max-height: 10%;
+	width: 100%;
+	padding: 2px map-get(var.$gap, "sm");
+	padding-left: 0;
+	border-bottom: 2px solid map-get(var.$colors, "text");
+}
+
+.#{var.$prefix}__thirdpartylist {
+	overflow-y: scroll;
+	max-height: 90%;
+
+	&__item {
+		margin-top: map-get(var.$gap, "xs");
+		margin-bottom: map-get(var.$gap, "lg");
+		margin-right: map-get(var.$gap, "xs");
+
+		h4 {
+			margin-bottom: map-get(var.$gap, "xs");
+		}
+
+		.links {
+			@include mix.verticalCenter();
+			flex-direction: row;
+			gap: map-get(var.$gap, "md");
+			margin-top: map-get(var.$gap, "sm");
+		}
+	}
+}

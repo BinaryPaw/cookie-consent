@@ -4,6 +4,26 @@
 
 $maxWidth: fct.pixelToRem(800px) - (2 * map-get(var.$gap, "md"));
 
+* {
+	scrollbar-width: thin;
+	scrollbar-color: map-get(var.$colors, "accent");
+}
+
+::-webkit-scrollbar {
+	width: fct.pixelToRem(5px);
+	height: fct.pixelToRem(5px);
+}
+
+::-webkit-scrollbar-track {
+	border-radius: var.$infinite;
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: var.$infinite;
+	background: map-get(var.$colors, "accent");
+}
+
 .#{var.$prefix}__container {
 	background-color: var(fct.getColorVar("bg"));
 	position: fixed;
@@ -25,9 +45,14 @@ $maxWidth: fct.pixelToRem(800px) - (2 * map-get(var.$gap, "md"));
 	}
 
 	&--modify {
+		overflow-y: auto;
 		position: fixed;
 		z-index: 9999;
 		@include mix.spanInAbsolute();
+
+		> div > p {
+			margin-bottom: map-get(var.$gap, "md");
+		}
 	}
 
 	&--small {
@@ -38,6 +63,13 @@ $maxWidth: fct.pixelToRem(800px) - (2 * map-get(var.$gap, "md"));
 		bottom: 0;
 		left: 0;
 	}
+}
+
+.#{var.$prefix}__scroller--max {
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	flex: auto;
 }
 
 @media only screen and (min-width: map-get(var.$breakpoints, "md")) {
@@ -52,6 +84,16 @@ $maxWidth: fct.pixelToRem(800px) - (2 * map-get(var.$gap, "md"));
 			left: 50%;
 			top: 50%;
 			@include mix.roundCorner(map-get(var.$gap, "sm"));
+		}
+	}
+
+	.#{var.$prefix}__scroller {
+		overflow-y: auto;
+
+		&--max {
+			max-height: 30rem;
+			flex-direction: row;
+			gap: fct.pixelToRem(50px);
 		}
 	}
 }
