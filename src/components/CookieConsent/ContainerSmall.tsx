@@ -20,7 +20,7 @@ function ContainerSmall({ name, preamble, privacyPolicyLink, cookiePolicyLink }:
 			<div>
 				<IconTimes />
 				<Title>
-					{name} {LanguageHelper.translate("cc-small-TITLE")}
+					{name} {LanguageHelper.translate("TITLE")}
 				</Title>
 				<Paragraph>{preamble}</Paragraph>
 				<ButtonGroup

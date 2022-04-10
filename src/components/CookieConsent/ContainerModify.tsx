@@ -31,7 +31,7 @@ function ContainerModify({
 			<div className="wrapper">
 				<IconTimes />
 				<Title>
-					{name} {LanguageHelper.translate("cc-small-TITLE")}
+					{name} {LanguageHelper.translate("TITLE")}
 				</Title>
 				<Paragraph>{preamble}</Paragraph>
 				<div className="cc__scroller cc__scroller--max">

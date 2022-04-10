@@ -1,24 +1,14 @@
 {
-	"components": {
-		"switch": {
-			"DISABLED_TOOLTIP": "Notwenidger Cookie"
-		}
-	},
-	"cc": {
-		"small": {
-			"TITLE": "Cookie-Richtline",
-			"PRIVACY_POLICY": "Datenschutzerklärung",
-			"COOKIE_POLICY": "Cookie-Richtline",
-			"BUTTON_ACCEPT": "Akzeptieren",
-			"BUTTON_DECLINE": "Ablehnen",
-			"BUTTON_MODIFY": "Bearbeiten"
-		},
-		"modify": {
-			"THIRD_PARTY_PROVIDER": "Drittanbieter",
-			"OPT_OUT": "Cookies deaktivieren",
-			"ACCEPT_ALL": "Alle akzeptieren",
-			"DECLINE_ALL": "Alle ablehnen",
-			"SAVE_AND_CLOSE": "Sichern & schliessen"
-		}
-	}
+	"DISABLED_TOOLTIP": "Notwendiger Cookie",
+	"TITLE": "Cookie-Richtline",
+	"PRIVACY_POLICY": "Datenschutzerklärung",
+	"COOKIE_POLICY": "Cookie-Richtline",
+	"BUTTON_ACCEPT": "Akzeptieren",
+	"BUTTON_DECLINE": "Ablehnen",
+	"BUTTON_MODIFY": "Bearbeiten",
+	"THIRD_PARTY_PROVIDER": "Drittanbieter",
+	"OPT_OUT": "Cookies deaktivieren",
+	"ACCEPT_ALL": "Alle akzeptieren",
+	"DECLINE_ALL": "Alle ablehnen",
+	"SAVE_AND_CLOSE": "Sichern & schliessen"
 }

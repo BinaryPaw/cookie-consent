@@ -1,24 +1,14 @@
 {
-	"components": {
-		"switch": {
-			"DISABLED_TOOLTIP": "Necessary Cookie"
-		}
-	},
-	"cc": {
-		"small": {
-			"TITLE": "cookie consent",
-			"PRIVACY_POLICY": "Privacy policy",
-			"COOKIE_POLICY": "Cookie policy",
-			"BUTTON_ACCEPT": "Accept",
-			"BUTTON_DECLINE": "Decline",
-			"BUTTON_MODIFY": "Modify"
-		},
-		"modify": {
-			"THIRD_PARTY_PROVIDER": "Third-party provider",
-			"OPT_OUT": "Disable cookies",
-			"ACCEPT_ALL": "Accept all",
-			"DECLINE_ALL": "Decline all",
-			"SAVE_AND_CLOSE": "Save & Close"
-		}
-	}
+	"DISABLED_TOOLTIP": "Necessary Cookie",
+	"TITLE": "cookie consent",
+	"PRIVACY_POLICY": "Privacy policy",
+	"COOKIE_POLICY": "Cookie policy",
+	"BUTTON_ACCEPT": "Accept",
+	"BUTTON_DECLINE": "Decline",
+	"BUTTON_MODIFY": "Modify",
+	"THIRD_PARTY_PROVIDER": "Third-party provider",
+	"OPT_OUT": "Disable cookies",
+	"ACCEPT_ALL": "Accept all",
+	"DECLINE_ALL": "Decline all",
+	"SAVE_AND_CLOSE": "Save & Close"
 }

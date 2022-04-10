@@ -6,10 +6,10 @@ import Button from "./Button";
 function ActionButtonsModify() {
 	return (
 		<>
-			<Button color="accept">{LanguageHelper.translate("cc-modify-ACCEPT_ALL")}</Button>
-			<Button color="decline">{LanguageHelper.translate("cc-modify-DECLINE_ALL")}</Button>
+			<Button color="accept">{LanguageHelper.translate("ACCEPT_ALL")}</Button>
+			<Button color="decline">{LanguageHelper.translate("DECLINE_ALL")}</Button>
 			<Button color="accent" icon={<IconCheck />}>
-				{LanguageHelper.translate("cc-modify-SAVE_AND_CLOSE")}
+				{LanguageHelper.translate("SAVE_AND_CLOSE")}
 			</Button>
 		</>
 	);

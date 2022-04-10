@@ -14,15 +14,11 @@ function ButtonGroup({ cookieLink, privacyLink, actionButtons }: IButtonGroup) {
 		<div className="cc__btn__group">
 			<div className="secondary">
 				<a href={privacyLink}>
-					<Button type="tertiary">
-						{LanguageHelper.translate("cc-small-PRIVACY_POLICY")}
-					</Button>
+					<Button type="tertiary">{LanguageHelper.translate("PRIVACY_POLICY")}</Button>
 				</a>
 				{cookieLink && (
 					<a href={cookieLink}>
-						<Button type="tertiary">
-							{LanguageHelper.translate("cc-small-COOKIE_POLICY")}
-						</Button>
+						<Button type="tertiary">{LanguageHelper.translate("COOKIE_POLICY")}</Button>
 					</a>
 				)}
 			</div>

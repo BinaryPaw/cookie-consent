@@ -12,9 +12,7 @@ function Switch({ checked, disabled, onClick }: ISwitchProps) {
 		if (onClick && !disabled) onClick();
 	};
 
-	const necessaryCookieToolTip = disabled
-		? LanguageHelper.translate("components-switch-DISABLED_TOOLTIP")
-		: "";
+	const necessaryCookieToolTip = disabled ? LanguageHelper.translate("DISABLED_TOOLTIP") : "";
 
 	return (
 		<div className="cc__switch" title={necessaryCookieToolTip} onClick={handleClick}>

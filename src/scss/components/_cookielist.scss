@@ -3,7 +3,7 @@
 @use "../abstracts/functions" as fct;
 
 .#{var.$prefix}__cookieheader {
-	max-height: 10%;
+	max-height: 5rem;
 	overflow-x: auto;
 	@include mix.verticalCenter();
 

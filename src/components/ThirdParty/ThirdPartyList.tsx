@@ -18,7 +18,7 @@ function ThirdPartyList({ thirdParties }: IThirdPartyList) {
 	return (
 		<div className="cc_list">
 			<div className="cc__thirdpartyheader">
-				<h5>{LanguageHelper.translate("cc-modify-THIRD_PARTY_PROVIDER")}</h5>
+				<h5>{LanguageHelper.translate("THIRD_PARTY_PROVIDER")}</h5>
 			</div>
 			<div className="cc__thirdpartylist">
 				{thirdParties.map((thirdParty) => (

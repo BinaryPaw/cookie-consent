@@ -3,7 +3,7 @@
 @use "../abstracts/functions" as fct;
 
 .#{var.$prefix}__thirdpartyheader {
-	max-height: 10%;
+	max-height: 5rem;
 	width: 100%;
 	padding: 2px map-get(var.$gap, "sm");
 	padding-left: 0;

@@ -16,12 +16,10 @@ function ThirdPartyItem({ thirdParty }: IThirdPartyItem) {
 			<Paragraph>{thirdParty.desc}</Paragraph>
 			<div className="links">
 				<ExternalLink link={thirdParty.privacyLink}>
-					<Button type="tertiary">
-						{LanguageHelper.translate("cc-small-PRIVACY_POLICY")}
-					</Button>
+					<Button type="tertiary">{LanguageHelper.translate("PRIVACY_POLICY")}</Button>
 				</ExternalLink>
 				<ExternalLink link={thirdParty.optOutLink}>
-					<Button type="tertiary">{LanguageHelper.translate("cc-modify-OPT_OUT")}</Button>
+					<Button type="tertiary">{LanguageHelper.translate("OPT_OUT")}</Button>
 				</ExternalLink>
 			</div>
 		</div>
