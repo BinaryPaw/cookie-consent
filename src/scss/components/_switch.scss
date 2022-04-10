@@ -20,7 +20,7 @@ $knobSize: fct.pixelToRem(16px);
 			background-color: var(fct.getColorVar("accept"));
 
 			&:before {
-				transform: translateX(calc($switchWidth - $switchHeight));
+				transform: translate(calc($switchWidth - $switchHeight), -50%);
 			}
 		}
 
@@ -46,8 +46,9 @@ $knobSize: fct.pixelToRem(16px);
 			position: absolute;
 			height: $knobSize;
 			width: $knobSize;
+			top: 50%;
 			left: calc(($switchHeight - $knobSize) / 2);
-			bottom: calc(($switchHeight - $knobSize) / 2);
+			transform: translateY(-50%);
 			background-color: var(fct.getColorVar("bg"));
 			border-radius: var.$infinite;
 			transition: inherit;

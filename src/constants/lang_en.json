@@ -15,7 +15,7 @@
 		},
 		"modify": {
 			"THIRD_PARTY_PROVIDER": "Third-party provider",
-			"OPT_OUT": "Opt-Out",
+			"OPT_OUT": "Disable cookies",
 			"ACCEPT_ALL": "Accept all",
 			"DECLINE_ALL": "Decline all",
 			"SAVE_AND_CLOSE": "Save & Close"
