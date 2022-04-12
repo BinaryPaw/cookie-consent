@@ -14,6 +14,7 @@
 		"url": "https://github.com/BinaryPaw/cookie-consent/issues"
 	},
 	"license": "MIT",
+	"main": "cookieConsent.js",
 	"browser": "cookieConsent.js",
 	"repository": {
 		"type": "git",
