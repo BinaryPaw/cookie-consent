@@ -13,7 +13,7 @@
 	"bugs": {
 		"url": "https://github.com/BinaryPaw/cookie-consent/issues"
 	},
-	"license": "MIT",
+	"license": "EPL-2.0",
 	"main": "cookieConsent.js",
 	"browser": "cookieConsent.js",
 	"repository": {
