@@ -107,12 +107,6 @@ stories.add("CookieConsent", () => {
 			privacyLink: "https://twitter.com/en/privacy",
 			optOutLink: "https://twitter.com/en/privacy",
 		},
-		{
-			name: "Twitter4123231",
-			desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
-			privacyLink: "https://twitter.com/en/privacy",
-			optOutLink: "https://twitter.com/en/privacy",
-		},
 	];
 
 	return (
