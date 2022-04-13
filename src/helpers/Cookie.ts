@@ -1,26 +1,9 @@
 import { ICookie } from "../components/CookiesList/CookiesList";
-
-export type StorageKey = `CC_${string}`;
+import { StorageKey } from "./Utility";
 
 export class CookieHelper {
 	static KEY_COOKIES: StorageKey = "CC_COOKIES";
 	static KEY_HAS_DECIDED: StorageKey = "CC_USER_HAS_DECIDED";
-
-	static retrieveStorageItem(key: StorageKey) {
-		const item: string | null = localStorage.getItem(key);
-		if (!item) return;
-		const parsed: any = JSON.parse(item);
-		return parsed;
-	}
-
-	static setStorageItem(key: StorageKey, value: any) {
-		const stringified: string = JSON.stringify(value);
-		localStorage.setItem(key, stringified);
-	}
-
-	static removeStorageItem(key: StorageKey) {
-		localStorage.removeItem(key);
-	}
 
 	static compareCookies(refCookies: Array<ICookie>, cookies: Array<ICookie>) {
 		if (refCookies.length !== cookies.length) return false;

@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { ICookie } from "../../components/CookiesList/CookiesList";
 import { CookieHelper } from "../Cookie";
+import Utility from "../Utility";
 
 export type SavingMode = "accept" | "decline" | "close";
 
@@ -29,9 +30,9 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 
 	const setDecisionState = (state: boolean) => {
 		if (state) {
-			CookieHelper.setStorageItem(CookieHelper.KEY_HAS_DECIDED, state);
+			Utility.setStorageItem(CookieHelper.KEY_HAS_DECIDED, state);
 		} else {
-			CookieHelper.removeStorageItem(CookieHelper.KEY_HAS_DECIDED);
+			Utility.removeStorageItem(CookieHelper.KEY_HAS_DECIDED);
 		}
 		setHasDecided(state);
 		setModify(false);
@@ -70,12 +71,12 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 			default:
 				break;
 		}
-		CookieHelper.setStorageItem(CookieHelper.KEY_COOKIES, cookies);
+		Utility.setStorageItem(CookieHelper.KEY_COOKIES, cookies);
 		setDecisionState(true);
 	};
 
 	const loadCookies = (newCookies: Array<ICookie>) => {
-		const storageCookies: Array<ICookie> = CookieHelper.retrieveStorageItem(
+		const storageCookies: Array<ICookie> = Utility.retrieveStorageItem(
 			CookieHelper.KEY_COOKIES
 		);
 
@@ -91,13 +92,13 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 				newCookies,
 				storageCookies
 			);
-			CookieHelper.setStorageItem(CookieHelper.KEY_COOKIES, mergedCookies);
+			Utility.setStorageItem(CookieHelper.KEY_COOKIES, mergedCookies);
 			setCookies(mergedCookies);
 		}
 	};
 
 	useEffect(() => {
-		const decision: any = CookieHelper.retrieveStorageItem(CookieHelper.KEY_HAS_DECIDED);
+		const decision: any = Utility.retrieveStorageItem(CookieHelper.KEY_HAS_DECIDED);
 		if (decision === true) setDecisionState(true);
 		else setDecisionState(false);
 	}, []);
