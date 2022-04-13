@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CookieContext, ICookieContext } from "../../helpers/context/CookieContext";
 import LanguageHelper from "../../helpers/Language";
 import ActionButtonsSmall from "../Button/ActionButtonsSmall";
 import ButtonGroup from "../Button/ButtonGroup";
@@ -15,6 +16,12 @@ export interface IContainerSmall {
 }
 
 function ContainerSmall({ name, preamble, privacyPolicyLink, cookiePolicyLink }: IContainerSmall) {
+	const cookieCtx: ICookieContext | null = useContext(CookieContext);
+
+	if (cookieCtx && (cookieCtx.hasDecided || cookieCtx.modify)) {
+		return null;
+	}
+
 	return (
 		<div className="cc__container cc__container--small">
 			<div>

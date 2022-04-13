@@ -3,7 +3,7 @@ import { CookieContext, ICookieContext } from "../../helpers/context/CookieConte
 import LanguageHelper from "../../helpers/Language";
 import ActionButtonsModify from "../Button/ActionButtonsModify";
 import ButtonGroup from "../Button/ButtonGroup";
-import CookiesList, { ICookie } from "../CookiesList/CookiesList";
+import CookiesList from "../CookiesList/CookiesList";
 import IconTimes from "../Icons/IconTimes";
 import Paragraph from "../Text/Paragraph";
 import Title from "../Text/Title";
@@ -27,10 +27,18 @@ function ContainerModify({
 }: IContainerModify) {
 	const cookieCtx: ICookieContext | null = useContext(CookieContext);
 
+	if (cookieCtx && (cookieCtx.hasDecided || !cookieCtx.modify)) {
+		return null;
+	}
+
+	const handleClose = () => {
+		if (cookieCtx) cookieCtx.toggleModifyState();
+	};
+
 	return (
 		<div className="cc__container cc__container--modify">
 			<div className="wrapper">
-				<IconTimes />
+				<IconTimes onClick={handleClose} />
 				<Title>
 					{name} {LanguageHelper.translate("TITLE")}
 				</Title>

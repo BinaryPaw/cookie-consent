@@ -4,8 +4,7 @@ export type StorageKey = `CC_${string}`;
 
 export class CookieHelper {
 	static KEY_COOKIES: StorageKey = "CC_COOKIES";
-	static KEY_CONSENT: StorageKey = "CC_USER_CONSENT";
-	static KEY_STATE: StorageKey = "CC_DECISION_STATE";
+	static KEY_HAS_DECIDED: StorageKey = "CC_USER_HAS_DECIDED";
 
 	static retrieveStorageItem(key: StorageKey) {
 		const item: string | null = localStorage.getItem(key);

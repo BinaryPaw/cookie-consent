@@ -13,6 +13,10 @@ function ActionButtonsSmall() {
 		if (cookieCtx) cookieCtx.saveChanges(decision);
 	};
 
+	const handleModify = () => {
+		if (cookieCtx) cookieCtx.toggleModifyState();
+	};
+
 	return (
 		<>
 			<Button color="accept" icon={<IconCheck />} onClick={() => handleDecision("accept")}>
@@ -21,7 +25,7 @@ function ActionButtonsSmall() {
 			<Button color="decline" icon={<IconTimes />} onClick={() => handleDecision("decline")}>
 				{LanguageHelper.translate("BUTTON_DECLINE")}
 			</Button>
-			<Button color="secondary" icon={<IconCog />}>
+			<Button color="secondary" icon={<IconCog />} onClick={handleModify}>
 				{LanguageHelper.translate("BUTTON_MODIFY")}
 			</Button>
 		</>
