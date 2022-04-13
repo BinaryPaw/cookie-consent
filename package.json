@@ -1,5 +1,4 @@
 {
-	"private": true,
 	"name": "@binarypaw/react-cookie-consent",
 	"version": "0.1.0-alpha",
 	"description": "A react cookie consent library",
