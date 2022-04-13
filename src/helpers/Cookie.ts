@@ -19,6 +19,10 @@ export class CookieHelper {
 		localStorage.setItem(key, stringified);
 	}
 
+	static removeStorageItem(key: StorageKey) {
+		localStorage.removeItem(key);
+	}
+
 	static compareCookies(refCookies: Array<ICookie>, cookies: Array<ICookie>) {
 		if (refCookies.length !== cookies.length) return false;
 

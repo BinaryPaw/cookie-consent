@@ -11,6 +11,10 @@ function ActionButtonsModify() {
 		if (cookieCtx) cookieCtx.changeCookieConsent([], consent);
 	};
 
+	const handleSave = () => {
+		if (cookieCtx) cookieCtx.saveChanges("close");
+	};
+
 	return (
 		<>
 			<Button color="accept" onClick={() => handleChangeAll(true)}>
@@ -19,7 +23,7 @@ function ActionButtonsModify() {
 			<Button color="decline" onClick={() => handleChangeAll(false)}>
 				{LanguageHelper.translate("DECLINE_ALL")}
 			</Button>
-			<Button color="accent" icon={<IconCheck />}>
+			<Button color="accent" icon={<IconCheck />} onClick={handleSave}>
 				{LanguageHelper.translate("SAVE_AND_CLOSE")}
 			</Button>
 		</>
