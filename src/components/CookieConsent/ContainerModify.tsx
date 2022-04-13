@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CookieContext, ICookieContext } from "../../helpers/context/CookieContext";
 import LanguageHelper from "../../helpers/Language";
 import ActionButtonsModify from "../Button/ActionButtonsModify";
 import ButtonGroup from "../Button/ButtonGroup";
@@ -12,7 +13,6 @@ import { URLString } from "./CookieConsent";
 export interface IContainerModify {
 	name: string;
 	preamble: string;
-	cookies: Array<ICookie>;
 	thirdPartyProvider: Array<IThirdPartyProvider>;
 	privacyPolicyLink: URLString;
 	cookiePolicyLink?: URLString;
@@ -21,11 +21,12 @@ export interface IContainerModify {
 function ContainerModify({
 	name,
 	preamble,
-	cookies,
 	thirdPartyProvider,
 	privacyPolicyLink,
 	cookiePolicyLink,
 }: IContainerModify) {
+	const cookieCtx: ICookieContext | null = useContext(CookieContext);
+
 	return (
 		<div className="cc__container cc__container--modify">
 			<div className="wrapper">
@@ -35,7 +36,9 @@ function ContainerModify({
 				</Title>
 				<Paragraph>{preamble}</Paragraph>
 				<div className="cc__scroller cc__scroller--max">
-					{cookies.length > 0 && <CookiesList cookies={cookies} />}
+					{cookieCtx && cookieCtx.cookies.length > 0 && (
+						<CookiesList cookies={cookieCtx.cookies} />
+					)}
 					{thirdPartyProvider.length > 0 && (
 						<ThirdPartyList thirdParties={thirdPartyProvider} />
 					)}

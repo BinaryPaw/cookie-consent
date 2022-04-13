@@ -7,6 +7,7 @@ export interface ICookie {
 	consent: boolean;
 	mandatory: boolean;
 	desc: string;
+	[key: string]: string | boolean | undefined;
 }
 
 export interface ICookiesList {

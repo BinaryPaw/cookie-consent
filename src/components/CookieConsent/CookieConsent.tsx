@@ -57,7 +57,6 @@ function CookieConsent({
 				<ContainerModify
 					name={name}
 					preamble={preamble}
-					cookies={cookies}
 					thirdPartyProvider={thirdPartyProvider}
 					privacyPolicyLink={privacyPolicyLink}
 					cookiePolicyLink={cookiePolicyLink}

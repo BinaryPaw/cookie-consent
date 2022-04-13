@@ -1,9 +1,10 @@
 import React, { createContext, useState } from "react";
 import { ICookie } from "../../components/CookiesList/CookiesList";
+import { CookieHelper } from "../Cookie";
 
 export interface ICookieContext {
 	cookies: Array<ICookie>;
-	setCookies: Function;
+	loadCookies: Function;
 	changeCookieConsent: Function;
 }
 
@@ -18,7 +19,7 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 	const [cookies, setCookies] = useState<Array<ICookie>>([]);
 
 	const changeCookieConsent = (cookieNames: Array<string> = [], consent: boolean) => {
-		const newCookies: Array<ICookie> = cookies.map((cookie) => {
+		const changedCookies: Array<ICookie> = cookies.map((cookie) => {
 			if (
 				!cookie.mandatory &&
 				(cookieNames.includes(cookie.name) || cookieNames.length < 1)
@@ -27,11 +28,34 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 			}
 			return cookie;
 		});
-		setCookies(newCookies);
+		setCookies(changedCookies);
+	};
+
+	const loadCookies = (newCookies: Array<ICookie>) => {
+		const storageCookies: Array<ICookie> = CookieHelper.retrieveStorageItem(
+			CookieHelper.KEY_COOKIES
+		);
+
+		if (!Array.isArray(storageCookies)) {
+			CookieHelper.setStorageItem(CookieHelper.KEY_COOKIES, newCookies);
+			setCookies(newCookies);
+			return;
+		}
+
+		if (CookieHelper.compareCookies(storageCookies, newCookies)) {
+			setCookies(storageCookies);
+		} else {
+			const mergedCookies: Array<ICookie> = CookieHelper.mergeCookies(
+				newCookies,
+				storageCookies
+			);
+			CookieHelper.setStorageItem(CookieHelper.KEY_COOKIES, mergedCookies);
+			setCookies(mergedCookies);
+		}
 	};
 
 	return (
-		<CookieContext.Provider value={{ cookies, setCookies, changeCookieConsent }}>
+		<CookieContext.Provider value={{ cookies, loadCookies, changeCookieConsent }}>
 			{children}
 		</CookieContext.Provider>
 	);

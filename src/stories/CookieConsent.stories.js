@@ -113,7 +113,6 @@ stories.add("CookieConsent", () => {
 		<CookieConsent
 			name="BinaryPaw"
 			preamble="treasdadasdasdas"
-			language="de"
 			privacyPolicyLink="https://binarypaw.com/"
 			cookiePolicyLink="https://binarypaw.com/"
 			cookies={cookies}
