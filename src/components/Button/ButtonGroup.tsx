@@ -1,6 +1,6 @@
 import React from "react";
 import LanguageHelper from "../../helpers/Language";
-import { URLString } from "../Link/ExternalLink";
+import ExternalLink, { URLString } from "../Link/ExternalLink";
 import Button from "./Button";
 
 export interface IButtonGroup {
@@ -13,13 +13,13 @@ function ButtonGroup({ cookieLink, privacyLink, actionButtons }: IButtonGroup) {
 	return (
 		<div className="cc__btn__group">
 			<div className="secondary">
-				<a href={privacyLink}>
+				<ExternalLink link={privacyLink}>
 					<Button type="tertiary">{LanguageHelper.translate("PRIVACY_POLICY")}</Button>
-				</a>
+				</ExternalLink>
 				{cookieLink && (
-					<a href={cookieLink}>
+					<ExternalLink link={cookieLink}>
 						<Button type="tertiary">{LanguageHelper.translate("COOKIE_POLICY")}</Button>
-					</a>
+					</ExternalLink>
 				)}
 			</div>
 			<div className="action">{actionButtons}</div>
