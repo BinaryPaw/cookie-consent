@@ -4,6 +4,8 @@ import { IThirdPartyProvider } from "../ThirdParty/ThirdPartyList";
 import { ICookie } from "../CookiesList/CookiesList";
 import ContainerModify from "./ContainerModify";
 import ContainerSmall from "./ContainerSmall";
+import { CookieProvider } from "../../helpers/context/CookieContext";
+import Init from "../Init/Init";
 
 export type URLString = `https://${string}.${string}`;
 export type ColorString = `#${string}`;
@@ -42,27 +44,26 @@ function CookieConsent({
 	thirdPartyProvider = [],
 	colors,
 }: ICookieConsentProps) {
-	useEffect(() => {
-		LanguageHelper.setLanguageFile(language);
-	}, [language]);
-
 	return (
-		<div className="cc__gimme-cookies">
-			<ContainerSmall
-				name={name}
-				preamble={preamble}
-				privacyPolicyLink={privacyPolicyLink}
-				cookiePolicyLink={cookiePolicyLink}
-			/>
-			<ContainerModify
-				name={name}
-				preamble={preamble}
-				cookies={cookies}
-				thirdPartyProvider={thirdPartyProvider}
-				privacyPolicyLink={privacyPolicyLink}
-				cookiePolicyLink={cookiePolicyLink}
-			/>
-		</div>
+		<CookieProvider>
+			<Init language={language} cookies={cookies} />
+			<div className="cc__gimme-cookies">
+				<ContainerSmall
+					name={name}
+					preamble={preamble}
+					privacyPolicyLink={privacyPolicyLink}
+					cookiePolicyLink={cookiePolicyLink}
+				/>
+				<ContainerModify
+					name={name}
+					preamble={preamble}
+					cookies={cookies}
+					thirdPartyProvider={thirdPartyProvider}
+					privacyPolicyLink={privacyPolicyLink}
+					cookiePolicyLink={cookiePolicyLink}
+				/>
+			</div>
+		</CookieProvider>
 	);
 }
 

@@ -38,15 +38,11 @@ function CookiesList({ cookies }: ICookiesList) {
 				))}
 			</div>
 			<div className="cc__cookielist">
-				{distinctGroups.map((group) => (
-					<div data-group={group} key={group}>
-						{cookies
-							.filter((cookie) => cookie.group === distinctGroups[activeGroup])
-							.map((cookie) => (
-								<ListItem key={cookie.name} cookie={cookie} />
-							))}
-					</div>
-				))}
+				{cookies
+					.filter((cookie) => cookie.group === distinctGroups[activeGroup])
+					.map((cookie) => (
+						<ListItem key={cookie.name} cookie={cookie} />
+					))}
 			</div>
 		</div>
 	);
