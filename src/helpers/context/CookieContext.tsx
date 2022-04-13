@@ -20,14 +20,16 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 
 	const changeCookieConsent = (cookieNames: Array<string> = [], consent: boolean) => {
 		const changedCookies: Array<ICookie> = cookies.map((cookie) => {
-			if (
-				!cookie.mandatory &&
-				(cookieNames.includes(cookie.name) || cookieNames.length < 1)
-			) {
+			const isMandatory = cookie.mandatory;
+			const changeAll = cookieNames.length < 1;
+			const cookieNeedsChange = cookieNames.includes(cookie.name);
+
+			if (!isMandatory && (changeAll || cookieNeedsChange)) {
 				cookie.consent = consent;
 			}
 			return cookie;
 		});
+
 		CookieHelper.setStorageItem(CookieHelper.KEY_COOKIES, changedCookies);
 		setCookies(changedCookies);
 	};
