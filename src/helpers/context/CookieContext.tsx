@@ -28,7 +28,11 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 	const [hasDecided, setHasDecided] = useState<boolean>(true);
 
 	const setDecisionState = (state: boolean) => {
-		CookieHelper.setStorageItem(CookieHelper.KEY_HAS_DECIDED, state);
+		if (state) {
+			CookieHelper.setStorageItem(CookieHelper.KEY_HAS_DECIDED, state);
+		} else {
+			CookieHelper.removeStorageItem(CookieHelper.KEY_HAS_DECIDED);
+		}
 		setHasDecided(state);
 		setModify(false);
 	};
@@ -76,7 +80,6 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 		);
 
 		if (!Array.isArray(storageCookies)) {
-			CookieHelper.setStorageItem(CookieHelper.KEY_COOKIES, newCookies);
 			setCookies(newCookies);
 			return;
 		}
