@@ -1,9 +1,9 @@
 import React from "react";
 import LanguageHelper from "../../helpers/Language";
 import { IThirdPartyProvider } from "./ThirdPartyList";
-import Paragraph from "../Text/Paragraph";
-import Button from "../Button";
 import ExternalLink from "../Link/ExternalLink";
+import Paragraph from "../Text/Paragraph";
+import Button from "../Button/Button";
 
 export interface IThirdPartyItem {
 	thirdParty: IThirdPartyProvider;

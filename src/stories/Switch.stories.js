@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
-import Switch from "../components/Switch";
+import Switch from "../components/Switch/Switch";
 
 const stories = storiesOf("CC", module);
 

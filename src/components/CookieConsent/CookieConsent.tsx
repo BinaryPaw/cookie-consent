@@ -1,12 +1,12 @@
 import React from "react";
 import { PackageLanguage } from "../../helpers/Language";
+import { CookieProvider } from "../../helpers/context/CookieContext";
 import { IThirdPartyProvider } from "../ThirdParty/ThirdPartyList";
 import { ICookie } from "../CookiesList/CookiesList";
-import ContainerModify from "./ContainerModify";
-import ContainerSmall from "./ContainerSmall";
-import { CookieProvider } from "../../helpers/context/CookieContext";
 import Init, { IThemeColors } from "../Init/Init";
 import { URLString } from "../Link/ExternalLink";
+import ContainerModify from "./ContainerModify";
+import ContainerSmall from "./ContainerSmall";
 
 export interface ICookieConsentProps {
 	name: string;

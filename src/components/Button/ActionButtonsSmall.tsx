@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import Button from "./Button";
+import { CookieContext, ICookieContext, SavingMode } from "../../helpers/context/CookieContext";
+import LanguageHelper from "../../helpers/Language";
 import IconCheck from "../Icons/IconCheck";
 import IconTimes from "../Icons/IconTimes";
 import IconCog from "../Icons/IconCog";
-import LanguageHelper from "../../helpers/Language";
-import { CookieContext, ICookieContext, SavingMode } from "../../helpers/context/CookieContext";
+import Button from "./Button";
 
 function ActionButtonsSmall() {
 	const cookieCtx: ICookieContext | null = useContext(CookieContext);

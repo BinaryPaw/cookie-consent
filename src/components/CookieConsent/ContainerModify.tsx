@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { CookieContext, ICookieContext } from "../../helpers/context/CookieContext";
 import LanguageHelper from "../../helpers/Language";
+import ThirdPartyList, { IThirdPartyProvider } from "../ThirdParty/ThirdPartyList";
 import ActionButtonsModify from "../Button/ActionButtonsModify";
-import ButtonGroup from "../Button/ButtonGroup";
 import CookiesList from "../CookiesList/CookiesList";
-import IconTimes from "../Icons/IconTimes";
 import { URLString } from "../Link/ExternalLink";
+import ButtonGroup from "../Button/ButtonGroup";
+import IconTimes from "../Icons/IconTimes";
 import Paragraph from "../Text/Paragraph";
 import Title from "../Text/Title";
-import ThirdPartyList, { IThirdPartyProvider } from "../ThirdParty/ThirdPartyList";
 
 export interface IContainerModify {
 	name: string;

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { ICookie } from "./CookiesList";
-import Paragraph from "../Text/Paragraph";
-import Switch from "../Switch";
 import { CookieContext, ICookieContext } from "../../helpers/context/CookieContext";
+import Paragraph from "../Text/Paragraph";
+import { ICookie } from "./CookiesList";
+import Switch from "../Switch/Switch";
 
 export interface IListItem {
 	cookie: ICookie;

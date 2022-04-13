@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { CookieContext, ICookieContext } from "../../helpers/context/CookieContext";
 import LanguageHelper from "../../helpers/Language";
 import ActionButtonsSmall from "../Button/ActionButtonsSmall";
+import { URLString } from "../Link/ExternalLink";
 import ButtonGroup from "../Button/ButtonGroup";
 import IconTimes from "../Icons/IconTimes";
-import { URLString } from "../Link/ExternalLink";
 import Paragraph from "../Text/Paragraph";
 import Title from "../Text/Title";
 

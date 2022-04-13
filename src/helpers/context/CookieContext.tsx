@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
-import { ICookie } from "../../components/CookiesList/CookiesList";
 import { CookieHelper } from "../Cookie";
 import Utility from "../Utility";
+import { ICookie } from "../../components/CookiesList/CookiesList";
 
 export type SavingMode = "accept" | "decline" | "close";
 
@@ -25,8 +25,8 @@ CookieContext.displayName = "CookieContext";
 
 export const CookieProvider = ({ children }: ICookieProvider) => {
 	const [cookies, setCookies] = useState<Array<ICookie>>([]);
-	const [modify, setModify] = useState<boolean>(false);
 	const [hasDecided, setHasDecided] = useState<boolean>(true);
+	const [modify, setModify] = useState<boolean>(false);
 
 	const setDecisionState = (state: boolean) => {
 		if (state) {

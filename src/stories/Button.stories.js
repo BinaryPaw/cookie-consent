@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Button from "../components/Button";
+import Button from "../components/Button/Button";
 import IconCheck from "../components/Icons/IconCheck";
 import IconCog from "../components/Icons/IconCog";
 import IconTimes from "../components/Icons/IconTimes";
