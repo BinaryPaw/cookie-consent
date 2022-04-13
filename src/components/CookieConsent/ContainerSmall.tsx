@@ -22,10 +22,14 @@ function ContainerSmall({ name, preamble, privacyPolicyLink, cookiePolicyLink }:
 		return null;
 	}
 
+	const handleClose = () => {
+		if (cookieCtx) cookieCtx.disableConsentTemporarily();
+	};
+
 	return (
 		<div className="cc__container cc__container--small">
 			<div>
-				<IconTimes />
+				<IconTimes onClick={handleClose} />
 				<Title>
 					{name} {LanguageHelper.translate("TITLE")}
 				</Title>

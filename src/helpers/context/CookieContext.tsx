@@ -12,6 +12,7 @@ export interface ICookieContext {
 	changeCookieConsent: Function;
 	saveChanges: Function;
 	toggleModifyState: Function;
+	disableConsentTemporarily: Function;
 }
 
 export interface ICookieProvider {
@@ -34,6 +35,10 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 
 	const toggleModifyState = () => {
 		setModify((prevState) => !prevState);
+	};
+
+	const disableConsentTemporarily = () => {
+		setHasDecided(true);
 	};
 
 	const changeCookieConsent = (cookieNames: Array<string>, consent: boolean) => {
@@ -103,6 +108,7 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 				changeCookieConsent,
 				saveChanges,
 				toggleModifyState,
+				disableConsentTemporarily,
 			}}
 		>
 			{children}
