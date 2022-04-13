@@ -95,7 +95,8 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 
 	useEffect(() => {
 		const decision: any = CookieHelper.retrieveStorageItem(CookieHelper.KEY_HAS_DECIDED);
-		if (decision === false) setDecisionState(false);
+		if (decision === true) setDecisionState(true);
+		else setDecisionState(false);
 	}, []);
 
 	return (

@@ -1,23 +1,13 @@
-import React, { useEffect } from "react";
-import LanguageHelper, { PackageLanguage } from "../../helpers/Language";
+import React from "react";
+import { PackageLanguage } from "../../helpers/Language";
 import { IThirdPartyProvider } from "../ThirdParty/ThirdPartyList";
 import { ICookie } from "../CookiesList/CookiesList";
 import ContainerModify from "./ContainerModify";
 import ContainerSmall from "./ContainerSmall";
 import { CookieProvider } from "../../helpers/context/CookieContext";
-import Init from "../Init/Init";
+import Init, { IThemeColors } from "../Init/Init";
 
 export type URLString = `https://${string}.${string}`;
-export type ColorString = `#${string}`;
-
-export interface IThemeColors {
-	text?: ColorString;
-	secondary?: ColorString;
-	bg?: ColorString;
-	accept?: ColorString;
-	decline?: ColorString;
-	accent?: ColorString;
-}
 
 export interface ICookieConsentProps {
 	name: string;
@@ -46,7 +36,7 @@ function CookieConsent({
 }: ICookieConsentProps) {
 	return (
 		<CookieProvider>
-			<Init language={language} cookies={cookies} />
+			<Init language={language} cookies={cookies} colors={colors} />
 			<div className="cc__gimme-cookies">
 				<ContainerSmall
 					name={name}
