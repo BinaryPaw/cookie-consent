@@ -28,6 +28,7 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 			}
 			return cookie;
 		});
+		CookieHelper.setStorageItem(CookieHelper.KEY_COOKIES, changedCookies);
 		setCookies(changedCookies);
 	};
 
