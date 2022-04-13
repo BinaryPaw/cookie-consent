@@ -74,10 +74,10 @@ function App() {
 ## Properties
 
 | Name                                       | Description                                                      | Type                  | Default |
-| ------------------------------------------ | ---------------------------------------------------------------- | --------------------- | ------- | ---- |
+| ------------------------------------------ | ---------------------------------------------------------------- | --------------------- | ------- |
 | [name](#name)                              | your websites name                                               | string                | n/a     |
 | [activated?](#activated)                   | activates/deactivates the whole cookie-consent                   | boolean               | true    |
-| [language?](#language)                     | language for prewritten texts                                    | `"en"                 | "de"`   | "en" |
+| [language?](#language)                     | language for prewritten texts                                    | `"en" | "de"`         | "en"    |
 | [preamble](#preamble)                      | short description explaining what cookies are used for           | string                | n/a     |
 | [privacyPolicyLink](#privacypolicylink)    | privacy policy link of your website                              | string                | n/a     |
 | [cookiePolicyLink?](#cookiepolicylink)     | cookie policy link of your website                               | string                | n/a     |
