@@ -14,6 +14,7 @@ export interface ICookieContext {
 	saveChanges: Function;
 	toggleModifyState: Function;
 	disableConsentTemporarily: Function;
+	setSaveEventHandler: Function;
 }
 
 export interface ICookieProvider {
@@ -27,6 +28,7 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 	const [cookies, setCookies] = useState<Array<ICookie>>([]);
 	const [hasDecided, setHasDecided] = useState<boolean>(true);
 	const [modify, setModify] = useState<boolean>(false);
+	const [saveEventHandler, setSaveEventHandler] = useState<Function>(() => {});
 
 	const setDecisionState = (state: boolean) => {
 		if (state) {
@@ -72,6 +74,7 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 				break;
 		}
 		Utility.setStorageItem(CookieHelper.KEY_COOKIES, cookies);
+		saveEventHandler(cookies);
 		setDecisionState(true);
 	};
 
@@ -114,6 +117,7 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 				saveChanges,
 				toggleModifyState,
 				disableConsentTemporarily,
+				setSaveEventHandler,
 			}}
 		>
 			{children}

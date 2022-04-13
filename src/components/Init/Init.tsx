@@ -10,6 +10,7 @@ export interface IInit {
 	language: PackageLanguage;
 	cookies: Array<ICookie>;
 	colors?: IThemeColors;
+	saveEventHandler?: Function;
 }
 
 export interface IThemeColors {
@@ -22,8 +23,12 @@ export interface IThemeColors {
 	[key: string]: ColorString | undefined;
 }
 
-function Init({ language, cookies, colors }: IInit) {
+function Init({ language, cookies, colors, saveEventHandler }: IInit) {
 	const cookieCtx: ICookieContext | null = useContext(CookieContext);
+
+	useEffect(() => {
+		if (cookieCtx && saveEventHandler) cookieCtx.setSaveEventHandler(() => saveEventHandler);
+	}, [saveEventHandler]);
 
 	useEffect(() => {
 		if (colors) {

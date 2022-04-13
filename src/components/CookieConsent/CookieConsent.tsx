@@ -18,6 +18,7 @@ export interface ICookieConsentProps {
 	cookiePolicyLink?: URLString;
 	cookies?: Array<ICookie>;
 	thirdPartyProvider?: Array<IThirdPartyProvider>;
+	onSave?: Function;
 
 	colors?: IThemeColors;
 }
@@ -31,11 +32,12 @@ function CookieConsent({
 	cookiePolicyLink,
 	cookies = [],
 	thirdPartyProvider = [],
+	onSave,
 	colors,
 }: ICookieConsentProps) {
 	return (
 		<CookieProvider>
-			<Init language={language} cookies={cookies} colors={colors} />
+			<Init language={language} cookies={cookies} colors={colors} saveEventHandler={onSave} />
 			<div className="cc__gimme-cookies">
 				<ContainerSmall
 					name={name}

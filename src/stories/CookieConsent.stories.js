@@ -109,6 +109,10 @@ stories.add("CookieConsent", () => {
 		},
 	];
 
+	const handleSave = (cookies) => {
+		console.log(cookies);
+	};
+
 	return (
 		<CookieConsent
 			name="BinaryPaw"
@@ -116,6 +120,7 @@ stories.add("CookieConsent", () => {
 			privacyPolicyLink="https://binarypaw.com/"
 			cookiePolicyLink="https://binarypaw.com/"
 			cookies={cookies}
+			onSave={handleSave}
 			thirdPartyProvider={thirdParty}
 		/>
 	);
