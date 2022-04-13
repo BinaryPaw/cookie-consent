@@ -4,9 +4,9 @@ import LanguageHelper from "../../helpers/Language";
 import ActionButtonsSmall from "../Button/ActionButtonsSmall";
 import ButtonGroup from "../Button/ButtonGroup";
 import IconTimes from "../Icons/IconTimes";
+import { URLString } from "../Link/ExternalLink";
 import Paragraph from "../Text/Paragraph";
 import Title from "../Text/Title";
-import { URLString } from "./CookieConsent";
 
 export interface IContainerSmall {
 	name: string;

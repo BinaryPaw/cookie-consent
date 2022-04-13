@@ -109,10 +109,6 @@ stories.add("CookieConsent", () => {
 		},
 	];
 
-	const colors = {
-		bg: "#000000",
-	};
-
 	return (
 		<CookieConsent
 			name="BinaryPaw"
@@ -120,7 +116,6 @@ stories.add("CookieConsent", () => {
 			privacyPolicyLink="https://binarypaw.com/"
 			cookiePolicyLink="https://binarypaw.com/"
 			cookies={cookies}
-			colors={colors}
 			thirdPartyProvider={thirdParty}
 		/>
 	);

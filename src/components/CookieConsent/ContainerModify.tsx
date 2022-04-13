@@ -5,10 +5,10 @@ import ActionButtonsModify from "../Button/ActionButtonsModify";
 import ButtonGroup from "../Button/ButtonGroup";
 import CookiesList from "../CookiesList/CookiesList";
 import IconTimes from "../Icons/IconTimes";
+import { URLString } from "../Link/ExternalLink";
 import Paragraph from "../Text/Paragraph";
 import Title from "../Text/Title";
 import ThirdPartyList, { IThirdPartyProvider } from "../ThirdParty/ThirdPartyList";
-import { URLString } from "./CookieConsent";
 
 export interface IContainerModify {
 	name: string;

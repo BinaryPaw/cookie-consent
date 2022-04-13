@@ -1,5 +1,6 @@
 import React from "react";
-import { URLString } from "../CookieConsent/CookieConsent";
+
+export type URLString = `https://${string}.${string}`;
 
 export interface IExternalLink {
 	link: URLString;

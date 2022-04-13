@@ -6,8 +6,7 @@ import ContainerModify from "./ContainerModify";
 import ContainerSmall from "./ContainerSmall";
 import { CookieProvider } from "../../helpers/context/CookieContext";
 import Init, { IThemeColors } from "../Init/Init";
-
-export type URLString = `https://${string}.${string}`;
+import { URLString } from "../Link/ExternalLink";
 
 export interface ICookieConsentProps {
 	name: string;

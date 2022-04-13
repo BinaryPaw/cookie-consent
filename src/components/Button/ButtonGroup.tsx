@@ -1,6 +1,6 @@
 import React from "react";
 import LanguageHelper from "../../helpers/Language";
-import { URLString } from "../CookieConsent/CookieConsent";
+import { URLString } from "../Link/ExternalLink";
 import Button from "./Button";
 
 export interface IButtonGroup {

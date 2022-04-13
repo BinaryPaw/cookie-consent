@@ -1,6 +1,6 @@
 import React from "react";
 import LanguageHelper from "../../helpers/Language";
-import { URLString } from "../CookieConsent/CookieConsent";
+import { URLString } from "../Link/ExternalLink";
 import ThirdPartyItem from "./ThirdPartyItem";
 
 export interface IThirdPartyProvider {
