@@ -13,12 +13,12 @@ export default [
 		input: "src/index.ts",
 		output: [
 			{
-				file: `dist/${name}.js`,
+				file: `${name}.js`,
 				format: "cjs",
 				sourcemap: true,
 			},
 			{
-				file: `dist/${name}.mjs`,
+				file: `${name}.mjs`,
 				format: "esm",
 				sourcemap: true,
 			},
@@ -31,7 +31,7 @@ export default [
 			}),
 			scss({
 				include: ["src/scss/**"],
-				output: `dist/${name}.css`,
+				output: `${name}.css`,
 				sourceMap: true,
 			}),
 			json({

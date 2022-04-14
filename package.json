@@ -1,6 +1,6 @@
 {
 	"name": "@binarypaw/react-cookie-consent",
-	"version": "0.1.0-alpha",
+	"version": "0.1.1-alpha",
 	"description": "A react cookie consent library",
 	"keywords": [
 		"cookies",
@@ -14,8 +14,8 @@
 		"url": "https://github.com/BinaryPaw/cookie-consent/issues"
 	},
 	"license": "EPL-2.0",
-	"main": "cookieConsent.js",
-	"browser": "cookieConsent.js",
+	"main": "dist/cookieConsent.js",
+	"browser": "dist/cookieConsent.js",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/BinaryPaw/cookie-consent"
