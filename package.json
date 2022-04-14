@@ -21,8 +21,6 @@
 		"url": "https://github.com/BinaryPaw/cookie-consent"
 	},
 	"scripts": {
-		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook",
 		"build": "rollup -c"
 	},
 	"author": "Andreas Jokiel",
@@ -33,13 +31,8 @@
 		"@rollup/plugin-json": "^4.1.0",
 		"@rollup/plugin-node-resolve": "^13.1.3",
 		"@rollup/plugin-typescript": "^8.3.1",
-		"@storybook/addon-actions": "^6.4.20",
-		"@storybook/addon-essentials": "^6.4.22",
-		"@storybook/addon-interactions": "^6.4.20",
-		"@storybook/addon-links": "^6.4.20",
-		"@storybook/react": "^6.1.21",
-		"@storybook/testing-library": "^0.0.9",
 		"babel-loader": "^8.2.4",
+		"prismjs": "^1.27.0",
 		"rollup": "^2.70.1",
 		"rollup-plugin-babel": "^4.4.0",
 		"rollup-plugin-esbuild": "^4.8.2",
@@ -47,7 +40,7 @@
 		"rollup-plugin-scss": "^3.0.0",
 		"rollup-plugin-terser": "^7.0.2",
 		"sass": "^1.49.11",
-		"storybook-addon-sass-postcss": "^0.1.0",
+		"trim": "^1.0.1",
 		"typescript": "^4.6.3"
 	},
 	"peerDependencies": {
