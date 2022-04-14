@@ -1,4 +1,4 @@
-import typescript from "@rollup/plugin-typescript";
+import typescript from "rollup-plugin-typescript2";
 import resolve from "@rollup/plugin-node-resolve";
 import json from "@rollup/plugin-json";
 import external from "rollup-plugin-peer-deps-external";
@@ -24,6 +24,9 @@ export default [
 			},
 		],
 		plugins: [
+			typescript({
+				useTsconfigDeclarationDir: true,
+			}),
 			babel({
 				exclude: ["node_modules/**", "src/scss/**"],
 				plugins: ["@babel/plugin-transform-react-jsx"],
@@ -35,9 +38,6 @@ export default [
 				output: `${name}.css`,
 				outputStyle: "compressed",
 				sourceMap: true,
-			}),
-			typescript({
-				tsconfig: "tsconfig.json",
 			}),
 			external(),
 			resolve(),

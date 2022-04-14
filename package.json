@@ -1,6 +1,6 @@
 {
 	"name": "@binarypaw/react-cookie-consent",
-	"version": "0.1.6-alpha",
+	"version": "0.1.7-alpha",
 	"description": "A react cookie consent library",
 	"keywords": [
 		"cookies",
@@ -31,16 +31,17 @@
 		"@rollup/plugin-json": "^4.1.0",
 		"@rollup/plugin-node-resolve": "^13.1.3",
 		"@rollup/plugin-typescript": "^8.3.1",
+		"@types/react": "^18.0.5",
 		"babel-loader": "^8.2.4",
-		"prismjs": "^1.27.0",
 		"rollup": "^2.70.1",
 		"rollup-plugin-babel": "^4.4.0",
 		"rollup-plugin-esbuild": "^4.8.2",
 		"rollup-plugin-peer-deps-external": "^2.2.4",
 		"rollup-plugin-scss": "^3.0.0",
 		"rollup-plugin-terser": "^7.0.2",
+		"rollup-plugin-typescript2": "^0.31.2",
 		"sass": "^1.49.11",
-		"trim": "^1.0.1",
+		"tslib": "^2.3.1",
 		"typescript": "^4.6.3"
 	},
 	"peerDependencies": {

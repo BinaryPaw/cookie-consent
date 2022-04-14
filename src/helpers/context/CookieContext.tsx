@@ -41,7 +41,7 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 	};
 
 	const toggleModifyState = () => {
-		setModify((prevState) => !prevState);
+		setModify((prevState: boolean) => !prevState);
 	};
 
 	const disableConsentTemporarily = () => {
@@ -49,7 +49,7 @@ export const CookieProvider = ({ children }: ICookieProvider) => {
 	};
 
 	const changeCookieConsent = (cookieNames: Array<string>, consent: boolean) => {
-		const changedCookies: Array<ICookie> = cookies.map((cookie) => {
+		const changedCookies: Array<ICookie> = cookies.map((cookie: ICookie) => {
 			const isMandatory = cookie.mandatory;
 			const changeAll = cookieNames.length < 1;
 			const cookieNeedsChange = cookieNames.includes(cookie.name);
