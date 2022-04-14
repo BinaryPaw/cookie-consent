@@ -29,13 +29,12 @@ export default [
 				plugins: ["@babel/plugin-transform-react-jsx"],
 				presets: ["@babel/preset-react"],
 			}),
+			json(),
 			scss({
 				include: ["src/scss/**"],
 				output: `${name}.css`,
+				outputStyle: "compressed",
 				sourceMap: true,
-			}),
-			json({
-				include: ["src/constants/**/*.json"],
 			}),
 			typescript({
 				tsconfig: "tsconfig.json",

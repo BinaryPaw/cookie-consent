@@ -1,6 +1,6 @@
 {
 	"name": "@binarypaw/react-cookie-consent",
-	"version": "0.1.2-alpha",
+	"version": "0.1.6-alpha",
 	"description": "A react cookie consent library",
 	"keywords": [
 		"cookies",

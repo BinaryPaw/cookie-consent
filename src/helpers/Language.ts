@@ -1,15 +1,21 @@
+import lang_de from "../constants/lang_de.json";
+import lang_en from "../constants/lang_en.json";
+
 export type PackageLanguage = "de" | "en";
 
 export default class LanguageHelper {
-	static langFile: { [key: string]: string };
+	static languageFiles: any = {
+		de: lang_de,
+		en: lang_en,
+	}
+	static language: string;
 
-	static async setLanguageFile(lang: PackageLanguage) {
-		const langFile = await import(`../constants/lang_${lang}.json`);
-		if (langFile) this.langFile = langFile;
+	static setLanguageFile(lang: PackageLanguage) {
+		this.language = lang;
 	}
 
 	static translate(key: string) {
-		if (!this.langFile) return key;
-		return this.langFile[key];
+		if (!this.languageFiles[this.language]) return key;
+		return this.languageFiles[this.language][key];
 	}
 }

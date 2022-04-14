@@ -14,8 +14,8 @@ The library exposes one react component which must be added to the top-level of 
 
 ```typescript
 import React from "react";
-import CookieConsent from "@binarypaw/react-cookie-consent";
-import "cookieConsent.css" from "@binarypaw/react-cookie-consent";
+import { CookieConsent } from "@binarypaw/react-cookie-consent";
+import "@binarypaw/react-cookie-consent/dist/cookieConsent.css";
 
 function App() {
 	return (
@@ -34,8 +34,8 @@ All component props are documented in the [properties section](#properties)
 
 ```typescript
 import React from "react";
-import CookieConsent from "@binarypaw/react-cookie-consent";
-import "cookieConsent.css" from "@binarypaw/react-cookie-consent";
+import { CookieConsent } from "@binarypaw/react-cookie-consent";
+import "@binarypaw/react-cookie-consent/dist/cookieConsent.css";
 
 function App() {
 	const name = "BinaryPaw";
@@ -77,7 +77,7 @@ function App() {
 | ------------------------------------------ | ---------------------------------------------------------------- | --------------------- | ------- |
 | [name](#name)                              | your websites name                                               | string                | n/a     |
 | [activated?](#activated)                   | activates/deactivates the whole cookie-consent                   | boolean               | true    |
-| [language?](#language)                     | language for prewritten texts                                    | `"en" | "de"`         | "en"    |
+| [language?](#language)                     | language for prewritten texts                                    | `"en" or "de"`        | "en"    |
 | [preamble](#preamble)                      | short description explaining what cookies are used for           | string                | n/a     |
 | [privacyPolicyLink](#privacypolicylink)    | privacy policy link of your website                              | string                | n/a     |
 | [cookiePolicyLink?](#cookiepolicylink)     | cookie policy link of your website                               | string                | n/a     |
@@ -97,8 +97,6 @@ Deactivates or activates the whole cookie-consent library.
 ### language?
 
 Defines the language for all pre-written texts for example buttons.
-Available options: `"en"` or `"de"`
-Defaults to `"en"`
 
 ### preamble
 
