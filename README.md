@@ -6,11 +6,11 @@ React-cookie-consent is a frontend library that allows users of your website to 
 ## Installation
 
 Add the library to you project with the following command:
-`npm install @binarypaw/react-cookie-consent`
+```npm install @binarypaw/react-cookie-consent```
 
 ## Usage
 
-The library exposes one react component which must be added to the top-level of your application. You must also include the separate css file being delivered.
+The library exposes one react component which must be added to the top-level of your application. Make sure to include the separate css file being delivered.
 
 ```typescript
 import React from "react";
