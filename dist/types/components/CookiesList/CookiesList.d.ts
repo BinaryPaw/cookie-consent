@@ -1,7 +1,7 @@
 /// <reference types="react" />
 export interface ICookie {
     name: string;
-    group?: string;
+    group: string;
     consent: boolean;
     mandatory: boolean;
     desc: string;
