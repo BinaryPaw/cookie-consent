@@ -1,7 +1,12 @@
 {
 	"name": "@binarypaw/react-cookie-consent",
-	"version": "0.1.7-alpha",
 	"description": "A react cookie consent library",
+	"author": "Andreas Jokiel",
+	"version": "0.1.9-alpha",
+	"license": "EPL-2.0",
+	"types": "dist/types",
+	"main": "dist/cookieConsent.js",
+	"browser": "dist/cookieConsent.js",
 	"keywords": [
 		"cookies",
 		"cookie",
@@ -13,9 +18,6 @@
 	"bugs": {
 		"url": "https://github.com/BinaryPaw/cookie-consent/issues"
 	},
-	"license": "EPL-2.0",
-	"main": "dist/cookieConsent.js",
-	"browser": "dist/cookieConsent.js",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/BinaryPaw/cookie-consent"
@@ -23,7 +25,6 @@
 	"scripts": {
 		"build": "rollup -c"
 	},
-	"author": "Andreas Jokiel",
 	"devDependencies": {
 		"@babel/core": "^7.17.8",
 		"@babel/plugin-transform-react-jsx": "^7.17.3",

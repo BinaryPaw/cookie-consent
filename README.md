@@ -117,7 +117,7 @@ An array of all cookies being used by your website.
 ```typescript
 [{
 	name:  string;
-	group?:  string;
+	group:  string;
 	consent:  boolean;
 	mandatory:  boolean;
 	desc:  string;
